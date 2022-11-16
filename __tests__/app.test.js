@@ -29,12 +29,17 @@ describe('users', () => {
     });
   });
 
-  it('POST /api/v1/sessions signs in an existing user', async () => {
+  it('POST /api/v1/users/sessions signs in an existing user', async () => {
     await request(app).post('/api/v1/users').send(testUser);
     const res = await request(app)
       .post('/api/v1/users/sessions')
       .send({ email: 'test@example.com', password: '321321' });
     expect(res.status).toEqual(200);
+  });
+
+  it('GET api/v1/users/protected should return a 401 if not authenticated', async () => {
+    const res = await request(app).get('/api/v1/users/protected');
+    expect(res.status).toEqual(401);
   });
 
   afterAll(() => {

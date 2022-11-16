@@ -17,3 +17,13 @@ CREATE TABLE secrets (
   description TEXT NOT NULL,
   created_at TIMESTAMP
 );
+
+--   INSERT INTO secrets (
+--     title,
+--     description,
+--     created_at
+-- )
+-- VALUES
+--   ('Found Documents', 'Classified documents of the foregin minister found in damaged vehicle', yy-MM-dd HH:mm:ss),
+--   ('Recording', '48 second recording of a possible plan to intercept a motorcade', yy-MM-dd HH:mm:ss),
+--   ('Missing Aircraft', 'Aircraft has been unresponsive over Pacific for 35 minutes', yy-MM-dd HH:mm:ss);
