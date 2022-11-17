@@ -103,7 +103,7 @@ describe('secrets route', () => {
 
   it('GET /api/v1/secrets should return a list of secrets', async () => {
     const resp = await request(app).get('/api/v1/secrets');
-    console.log(resp.body);
+    
     expect(resp.body.length).toEqual(3);
     const foundDocuments = resp.body.find((secret) => secret.id === '1');
     expect(foundDocuments).toHaveProperty('title', 'Found Documents');
