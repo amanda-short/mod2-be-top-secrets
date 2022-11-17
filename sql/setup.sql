@@ -15,15 +15,14 @@ CREATE TABLE secrets (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   title TEXT NOT NULL,
   description TEXT NOT NULL,
-  created_at TIMESTAMP
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
---   INSERT INTO secrets (
---     title,
---     description,
---     created_at
--- )
--- VALUES
---   ('Found Documents', 'Classified documents of the foreign minister found in damaged vehicle', 'YYYY-MM-DD HH:MI:SS'),
---   ('Recording', '48 second recording of a possible plan to intercept a motorcade', 'YYYY-MM-DD HH:MI:SS'),
---   ('Missing Aircraft', 'Aircraft has been unresponsive over Pacific for 35 minutes', 'YYYY-MM-DD HH:MI:SS');
+  INSERT INTO secrets (
+    title,
+    description
+)
+VALUES
+  ('Found Documents', 'Classified documents of the foreign minister found in damaged vehicle'),
+  ('Recording', '48 second recording of a possible plan to intercept a motorcade'),
+  ('Missing Aircraft', 'Aircraft has been unresponsive over Pacific for 35 minutes');

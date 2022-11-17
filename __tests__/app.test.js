@@ -65,51 +65,51 @@ describe('users route', () => {
   });
 });
 
-  // it('GET api/v1/users should return 401 if user not admin', async () => {
-  //   const agent = request.agent(app);
-  //   const user = await UserService.create({ ...testUser });
+// it('GET api/v1/users should return 401 if user not admin', async () => {
+//   const agent = request.agent(app);
+//   const user = await UserService.create({ ...testUser });
 
-  //   await agent
-  //     .post('/api/v1/users/sessions')
-  //     .send({ email: 'test@example.com', password: '12345' });
+//   await agent
+//     .post('/api/v1/users/sessions')
+//     .send({ email: 'test@example.com', password: '12345' });
 
-  //   const res = await agent.get('/api/v1/users/');
-  //   expect(res.status).toEqual(403);
-  // });
+//   const res = await agent.get('/api/v1/users/');
+//   expect(res.status).toEqual(403);
+// });
 
-  // it('/users should return 200 if user is admin', async () => {
-  //   const agent = request.agent(app);
+// it('/users should return 200 if user is admin', async () => {
+//   const agent = request.agent(app);
 
-  //   await agent.post('/api/v1/users').send({
-  //     email: 'admin',
-  //     password: '1234',
-  //     firstName: 'admin',
-  //     lastName: 'admin',
-  //   });
+//   await agent.post('/api/v1/users').send({
+//     email: 'admin',
+//     password: '1234',
+//     firstName: 'admin',
+//     lastName: 'admin',
+//   });
 
-  //   await agent
-  //     .post('/api/v1/users/sessions')
-  //     .send({ email: 'admin', password: '1234' });
+//   await agent
+//     .post('/api/v1/users/sessions')
+//     .send({ email: 'admin', password: '1234' });
 
-  //   const res = await agent.get('/api/v1/users/');
-  //   console.log(res.body);
-  //   expect(res.status).toEqual(200);
-  // });
+//   const res = await agent.get('/api/v1/users/');
+//   console.log(res.body);
+//   expect(res.status).toEqual(200);
+// });
 
-  // describe('secrets route', () => {
-  //   beforeEach(() => {
-  //     return setup(pool);
-  //   });
+describe('secrets route', () => {
+  beforeEach(() => {
+    return setup(pool);
+  });
 
-  //   it.skip('GET /api/v1/secrets should return a list of secrets', async () => {
-  //     const resp = await request(app).get('/secrets');
-  //     expect(resp.body.length).toEqual(3);
-  //     const foundDocuments = resp.body.find((secret) => secret.id === '1');
-  //     expect(foundDocuments).toHaveProperty('title', 'Found Documents');
-  //     expect(foundDocuments).toHaveProperty('description', 'Classified documents of the foreign minister found in damaged vehicle');
-  //     expect(foundDocuments).toHaveProperty('timestamp', '2022');
-  //   });
-  // });
+  it('GET /api/v1/secrets should return a list of secrets', async () => {
+    const resp = await request(app).get('/api/v1/secrets');
+    console.log(resp.body);
+    expect(resp.body.length).toEqual(3);
+    const foundDocuments = resp.body.find((secret) => secret.id === '1');
+    expect(foundDocuments).toHaveProperty('title', 'Found Documents');
+    expect(foundDocuments).toHaveProperty('description', 'Classified documents of the foreign minister found in damaged vehicle');
+  });
+});
 
 afterAll(() => {
   pool.end();
