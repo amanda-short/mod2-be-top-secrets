@@ -24,6 +24,6 @@ CREATE TABLE secrets (
 --     created_at
 -- )
 -- VALUES
---   ('Found Documents', 'Classified documents of the foregin minister found in damaged vehicle', yy-MM-dd HH:mm:ss),
---   ('Recording', '48 second recording of a possible plan to intercept a motorcade', yy-MM-dd HH:mm:ss),
---   ('Missing Aircraft', 'Aircraft has been unresponsive over Pacific for 35 minutes', yy-MM-dd HH:mm:ss);
+--   ('Found Documents', 'Classified documents of the foreign minister found in damaged vehicle', 'YYYY-MM-DD HH:MI:SS'),
+--   ('Recording', '48 second recording of a possible plan to intercept a motorcade', 'YYYY-MM-DD HH:MI:SS'),
+--   ('Missing Aircraft', 'Aircraft has been unresponsive over Pacific for 35 minutes', 'YYYY-MM-DD HH:MI:SS');
