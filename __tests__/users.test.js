@@ -44,7 +44,7 @@ describe('users route', () => {
 
   it('api/v1/users/protected should return the current user if authenticated', async () => {
     const agent = request.agent(app);
-    const user = await UserService.create({ ...testUser });
+    await UserService.create({ ...testUser });
 
     await agent
       .post('/api/v1/users/sessions')
@@ -55,7 +55,7 @@ describe('users route', () => {
 
   it('DELETE /sessions deletes the user session', async () => {
     const agent = request.agent(app);
-    const user = await UserService.create({ ...testUser });
+    await UserService.create({ ...testUser });
     await agent
       .post('/api/v1/users/sessions')
       .send({ email: 'test@example.com', password: '321321' });
